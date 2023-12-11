@@ -40,14 +40,24 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.10")
+    implementation("androidx.core:core-ktx:1.10.1")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
+    implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    //Glide for image loading
+    implementation("com.github.bumptech.glide:glide:4.14.2")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    //for Notification
+    implementation("androidx.media:media:1.6.0")
+    //for storing objects in shared preferences
+    implementation("com.google.code.gson:gson:2.10")
+    //for sending mail
+//    implementation 'com.sun.mail:android-mail:1.6.2'
+//    implementation 'com.sun.mail:android-activation:1.6.2'
+
+    //for circular seekbar --> volume controls
+    implementation("com.github.lukelorusso:VerticalSeekBar:1.2.7")
+    implementation ("com.android.support:support-v4:27.0.1")
 }

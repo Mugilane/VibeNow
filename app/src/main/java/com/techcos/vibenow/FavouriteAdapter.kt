@@ -14,7 +14,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 import com.techcos.vibenow.databinding.FavouriteViewBinding
-import com.harshRajpurohit.musicPlayer.databinding.MoreFeaturesBinding
+import com.techcos.vibenow.databinding.MoreFeaturesBinding
 
 class FavouriteAdapter(private val context: Context, private var musicList: ArrayList<Music>,val playNext: Boolean = false) : RecyclerView.Adapter<FavouriteAdapter.MyHolder>() {
 

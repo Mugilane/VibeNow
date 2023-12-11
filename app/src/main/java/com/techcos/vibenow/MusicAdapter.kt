@@ -16,10 +16,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
-import com.harshRajpurohit.musicPlayer.MusicAdapter.MyHolder
-import com.harshRajpurohit.musicPlayer.databinding.DetailsViewBinding
-import com.harshRajpurohit.musicPlayer.databinding.MoreFeaturesBinding
-import com.harshRajpurohit.musicPlayer.databinding.MusicViewBinding
+import com.techcos.vibenow.MusicAdapter.MyHolder
+import com.techcos.vibenow.databinding.DetailsViewBinding
+import com.techcos.vibenow.databinding.MoreFeaturesBinding
+import com.techcos.vibenow.databinding.MusicViewBinding
 
 class MusicAdapter(private val context: Context, private var musicList: ArrayList<Music>, private val playlistDetails: Boolean = false,
 private val selectionActivity: Boolean = false)

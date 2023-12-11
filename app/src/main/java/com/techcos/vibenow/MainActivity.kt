@@ -22,7 +22,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
-import com.harshRajpurohit.musicPlayer.databinding.ActivityMainBinding
+import com.techcos.vibenow.databinding.ActivityMainBinding
 import java.io.File
 
 class MainActivity : AppCompatActivity() {

@@ -91,6 +91,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
 
                 //called when headphones buttons are pressed
                 //currently only pause or play music on button click
+                @Override
                 override fun onMediaButtonEvent(mediaButtonEvent: Intent?): Boolean {
                     if(PlayerActivity.isPlaying){
                         //pause music
@@ -109,7 +110,8 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
                     }
                     return super.onMediaButtonEvent(mediaButtonEvent)
                 }
-                override fun onSeekTo(pos: Long) {
+                   @Override
+                   override fun onSeekTo(pos: Long) {
                     super.onSeekTo(pos)
                     mediaPlayer!!.seekTo(pos.toInt())
                     val playBackStateNew = PlaybackStateCompat.Builder()
@@ -131,6 +133,7 @@ class MusicService: Service(), AudioManager.OnAudioFocusChangeListener {
             mediaPlayer!!.prepare()
             PlayerActivity.binding.playPauseBtnPA.setIconResource(R.drawable.pause_icon)
             showNotification(R.drawable.pause_icon)
+
             PlayerActivity.binding.tvSeekBarStart.text = formatDuration(mediaPlayer!!.currentPosition.toLong())
             PlayerActivity.binding.tvSeekBarEnd.text = formatDuration(mediaPlayer!!.duration.toLong())
             PlayerActivity.binding.seekBarPA.progress = 0
