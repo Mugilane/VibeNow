@@ -28,8 +28,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.harshRajpurohit.musicPlayer.databinding.ActivityPlayerBinding
-import com.harshRajpurohit.musicPlayer.databinding.AudioBoosterBinding
+import com.techcos.vibenow.databinding.ActivityPlayerBinding
+import com.techcos.vibenow.databinding.AudioBoosterBinding
 
 class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCompletionListener {
 
@@ -122,13 +122,13 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             }
         }
         binding.equalizerBtnPA.setOnClickListener {
-        try {
-            val eqIntent = Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL)
-            eqIntent.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, musicService!!.mediaPlayer!!.audioSessionId)
-            eqIntent.putExtra(AudioEffect.EXTRA_PACKAGE_NAME, baseContext.packageName)
-            eqIntent.putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC)
-            startActivityForResult(eqIntent, 13)
-        }catch (e: Exception){Toast.makeText(this,  "Equalizer Feature not Supported!!", Toast.LENGTH_SHORT).show()}
+            try {
+                val eqIntent = Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL)
+                eqIntent.putExtra(AudioEffect.EXTRA_AUDIO_SESSION, musicService!!.mediaPlayer!!.audioSessionId)
+                eqIntent.putExtra(AudioEffect.EXTRA_PACKAGE_NAME, baseContext.packageName)
+                eqIntent.putExtra(AudioEffect.EXTRA_CONTENT_TYPE, AudioEffect.CONTENT_TYPE_MUSIC)
+                startActivityForResult(eqIntent, 13)
+            }catch (e: Exception){Toast.makeText(this,  "Equalizer Feature not Supported!!", Toast.LENGTH_SHORT).show()}
         }
         binding.timerBtnPA.setOnClickListener {
             val timer = min15 || min30 || min60
@@ -146,10 +146,10 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
                     .setNegativeButton("No"){dialog, _ ->
                         dialog.dismiss()
                     }
-                    val customDialog = builder.create()
-                    customDialog.show()
-                    setDialogBtnBackground(this, customDialog)
-                }
+                val customDialog = builder.create()
+                customDialog.show()
+                setDialogBtnBackground(this, customDialog)
+            }
         }
         binding.shareBtnPA.setOnClickListener {
             val shareIntent = Intent()
@@ -157,7 +157,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             shareIntent.type = "audio/*"
             shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(musicListPA[songPosition].path))
             startActivity(Intent.createChooser(shareIntent, "Sharing Music File!!"))
-            
+
         }
         binding.favouriteBtnPA.setOnClickListener {
             fIndex = favouriteChecker(musicListPA[songPosition].id)
@@ -173,7 +173,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             FavouriteActivity.favouritesChanged = true
         }
     }
-//Important Function
+    //Important Function
     private fun initializeLayout(){
         songPosition = intent.getIntExtra("index", 0)
         when(intent.getStringExtra("class")){
@@ -197,7 +197,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
                 initServiceAndPlaylist(PlaylistActivity.musicPlaylist.ref[PlaylistDetails.currentPlaylistPos].playlist, shuffle = true)
             "PlayNext"->initServiceAndPlaylist(PlayNext.playNextList, shuffle = false, playNext = true)
         }
-    if (musicService!= null && !isPlaying) playMusic()
+        if (musicService!= null && !isPlaying) playMusic()
     }
 
     private fun setLayout(){
@@ -282,7 +282,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             musicService = binder.currentService()
             musicService!!.audioManager = getSystemService(AUDIO_SERVICE) as AudioManager
             musicService!!.audioManager.requestAudioFocus(musicService, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN)
-            }
+        }
         createMediaPlayer()
         musicService!!.seekBarSetup()
 
@@ -323,7 +323,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             binding.timerBtnPA.setColorFilter(ContextCompat.getColor(this, R.color.purple_500))
             min15 = true
             Thread{Thread.sleep((15 * 60000).toLong())
-            if(min15) exitApplication()}.start()
+                if(min15) exitApplication()}.start()
             dialog.dismiss()
         }
         dialog.findViewById<LinearLayout>(R.id.min_30)?.setOnClickListener {
@@ -355,7 +355,7 @@ class PlayerActivity : AppCompatActivity(), ServiceConnection, MediaPlayer.OnCom
             val path = dataColumn?.let { cursor.getString(it) }
             val duration = durationColumn?.let { cursor.getLong(it) }!!
             return Music(id = "Unknown", title = path.toString(), album = "Unknown", artist = "Unknown", duration = duration,
-            artUri = "Unknown", path = path.toString())
+                artUri = "Unknown", path = path.toString())
         }finally {
             cursor?.close()
         }

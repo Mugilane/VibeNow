@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.harshRajpurohit.musicPlayer.databinding.ActivitySelectionBinding
+import com.techcos.vibenow.databinding.ActivitySelectionBinding
 
 class SelectionActivity : AppCompatActivity() {
 

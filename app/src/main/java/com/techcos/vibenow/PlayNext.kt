@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.harshRajpurohit.musicPlayer.databinding.ActivityPlayNextBinding
+import com.techcos.vibenow.databinding.ActivityPlayNextBinding
 
 class PlayNext : AppCompatActivity() {
 

@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.harshRajpurohit.musicPlayer.databinding.ActivityPlaylistBinding
-import com.harshRajpurohit.musicPlayer.databinding.AddPlaylistDialogBinding
+import com.techcos.vibenow.databinding.ActivityPlaylistBinding
+import com.techcos.vibenow.databinding.AddPlaylistDialogBinding
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList

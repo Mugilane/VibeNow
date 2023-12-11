@@ -48,6 +48,10 @@ dependencies {
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     //Glide for image loading
     implementation("com.github.bumptech.glide:glide:4.14.2")
+    implementation("androidx.test:monitor:1.6.1")
+    implementation("androidx.test.ext:junit-ktx:1.1.5")
+    testImplementation("junit:junit:4.12")
+    androidTestImplementation("junit:junit:4.12")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.14.2")
     //for Notification
     implementation("androidx.media:media:1.6.0")
@@ -59,5 +63,6 @@ dependencies {
 
     //for circular seekbar --> volume controls
     implementation("com.github.lukelorusso:VerticalSeekBar:1.2.7")
+    //noinspection GradleCompatible
     implementation ("com.android.support:support-v4:27.0.1")
 }

@@ -9,7 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.harshRajpurohit.musicPlayer.databinding.FragmentNowPlayingBinding
+import com.techcos.vibenow.databinding.FragmentNowPlayingBinding
 
 class NowPlaying : Fragment() {
 

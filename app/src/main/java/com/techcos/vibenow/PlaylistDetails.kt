@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.GsonBuilder
-import com.harshRajpurohit.musicPlayer.databinding.ActivityPlaylistDetailsBinding
+import com.techcos.vibenow.databinding.ActivityPlaylistDetailsBinding
 
 class PlaylistDetails : AppCompatActivity() {
 
